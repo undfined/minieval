@@ -54,9 +54,7 @@ litellm = [
 wandb = [
     "wandb>=0.16"
 ]
-hf = [
-    "transformers>=4.38.0"
-]
+hf = []
 all = ["minieval[dev,beaker,vllm,litellm,hf,wandb]"]
 
 [tool.setuptools]
