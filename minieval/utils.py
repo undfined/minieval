@@ -1,3 +1,5 @@
+import json
+
 from omegaconf import OmegaConf
 
 WELCOME_MSG = r"""
@@ -55,7 +57,10 @@ def apply_overrides(config):
                 value = remaining_args[i + 1]
                 # Try to convert to appropriate type
                 try:
-                    if value.lower() == "true":
+                    if value.startswith("[") and value.endswith("]"):
+                        # Parse as JSON list
+                        value = json.loads(value)
+                    elif value.lower() == "true":
                         value = True
                     elif value.lower() == "false":
                         value = False
