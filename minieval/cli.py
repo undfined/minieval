@@ -140,7 +140,7 @@ class EvalRunner:
 
         # Save results with the Writer
         self.writer.save_responses(task_alias=task_config.alias, responses=responses)
-        self.writer.save_metrics(task_alias=task_config.alias, metrics=dataset_metrics)
+        self.writer.save_metrics(task_alias=task_config.alias, metrics=dataset_metrics, num_instances=len(responses))
 
         return dataset_metrics
 

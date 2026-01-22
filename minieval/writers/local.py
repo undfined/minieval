@@ -26,7 +26,7 @@ class LocalWriter(Writer):
 
         print(f"Saved responses to [bold purple]{save_path}[/bold purple]")
 
-    def save_metrics(self, task_alias: str, metrics: dict):
+    def save_metrics(self, task_alias: str, metrics: dict, *, num_instances: int = 0):
         os.makedirs(self.config.save_path, exist_ok=True)
 
         save_path = f"{task_alias}_metrics.json"

@@ -168,7 +168,7 @@ class Writer:
     def save_responses(self, task_alias: str, responses: list[Response]):
         raise NotImplementedError()
 
-    def save_metrics(self, task_alias: str, metrics: dict):
+    def save_metrics(self, task_alias: str, metrics: dict, *, num_instances: int = 0):
         raise NotImplementedError()
 
     def write_finalized_metrics(self, config):

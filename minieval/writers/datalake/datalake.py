@@ -329,7 +329,7 @@ class DatalakeWriter(Writer):
         print(f"Saved requests to [bold purple]{requests_path}[/bold purple]")
         print(f"Saved recorded inputs to [bold purple]{inputs_path}[/bold purple]")
 
-    def save_metrics(self, task_alias: str, metrics: dict):
+    def save_metrics(self, task_alias: str, metrics: dict, *, num_instances: int = 0):
         os.makedirs(self.config.save_path, exist_ok=True)
 
         # Extract task name from alias (remove formatting suffix like :mc, :cot, etc.)
@@ -417,7 +417,7 @@ class DatalakeWriter(Writer):
             },
             "processing_time": 3.0,  # This should be populated from actual processing time
             "current_date": "2024-01-01 00:00:00 UTC",  # This should be populated from actual date
-            "num_instances": 4,  # This should be populated from actual number of instances
+            "num_instances": num_instances,
             "metrics": metrics,
             "beaker_info": beaker_info,
         }
