@@ -52,9 +52,6 @@ class BeakerConfig(LauncherConfig):
         ]
         whoami = beaker_client.user_name
 
-        # The datalake API requires this "BEAKER_WORKSPACE" key to be set
-        self.env_vars += [EnvVar(name="BEAKER_WORKSPACE", value=self.workspace)]
-
         self.env_vars, self.env_secrets = get_env_vars(
             self.cluster,
             beaker_secrets,
