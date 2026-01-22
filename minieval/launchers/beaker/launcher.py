@@ -147,7 +147,7 @@ def launch_gantry(config: BeakerConfig):
     env_vars = [f"{var.name}={var.value}" for var in config.env_vars]
     env_secrets = [f"{var.name}={var.secret}" for var in config.env_secrets if var.secret is not None]
 
-    INSTALL_CMD = "uv pip uninstall transformers && uv pip install -e '.[all]'"
+    INSTALL_CMD = "uv pip install -e '.[all]'"
 
     # Launch the experiment
     try:

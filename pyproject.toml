@@ -44,7 +44,7 @@ beaker = [
     "beaker-gantry>=3.0.0rc1"
 ]
 vllm = [
-    "vllm==0.9.2"
+    "vllm==0.13.0"
 ]
 litellm = [
     "litellm>=1.0.0",
